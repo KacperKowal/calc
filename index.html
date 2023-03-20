@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let result = Number(prompt('podaj pierwszą liczbę'));
+        let operator = prompt('podaj operator +,-,/,* lub %');
+        let second = Number(prompt('podaj drugą liczbę'));
+
+        const addition = () => {
+            result += second;
+        }
+        const subtraction = () => {
+            result -= second;
+        }
+        const multiplication = () => {
+            result *= second;
+        }
+        const modulo = () => {
+            result %= second;
+        }
+        const division = () => {
+            result /= second;
+        }
+
+        const action = (operator) => {
+            switch (operator) {
+                case '+':
+                    addition()
+                    break;
+                case '-':
+                    subtraction()
+                    break;
+                case '/':
+                    if (second === 0) alert('nie dzielimy przez 0')
+                    division()
+                    break;
+                case '*':
+                    multiplication()
+                    break;
+                case '%':
+                    modulo()
+                    break;
+            }
+
+        alert(result)
+        }
+        action(operator)
+ 
+        let secondOperator = prompt('podaj kolejny operator +,-,/,* lub %');
+
+        while (secondOperator !== '') {
+            second = Number(prompt('podaj drugą liczbę'));
+            action(secondOperator)
+            secondOperator = prompt('podaj kolejny operator +,-,/,* lub %');
+        }
+    </script>
+</body>
+
+</html>
